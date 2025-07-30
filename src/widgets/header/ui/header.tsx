@@ -1,0 +1,32 @@
+import { Navbar } from "src/features/navbar";
+import cls from "./header.module.scss";
+import { Button } from "src/shared/button";
+const Header = () => {
+  return (
+    <header className={cls.header}>
+      <div className="container">
+        <div className={cls.header__wrapper}>
+          <img
+            src="content/svg/logo-desktop.svg"
+            width={65}
+            height={56}
+            alt="Логотип компании WINDOM"
+          />
+          <Navbar />
+          <div className={cls.header__phone}>
+            <img
+              src="content/svg/icon-phone.svg"
+              width={35}
+              height={35}
+              alt="Иконка телефона"
+            />
+            <a href="tel:+79625552525">+7 (962) 555-25-25</a>
+          </div>
+          <Button options="primary">Заказать звонок</Button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

@@ -36,6 +36,8 @@ body {
   // height: 100%;
   background-color: variables.$color-default-white;
   font-family: variables.$ff-default;
+  max-width: 1680px;
+  margin: 0 auto;
 }
 
 a {
