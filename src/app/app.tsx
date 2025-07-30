@@ -1,9 +1,21 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { AppRoutes } from "./routes/routes"
+import Layout from "src/pages/layout/ui/layout"
 
-const App = () => {
+const App = ()  => {
+
+  const router = createBrowserRouter([
+    {
+      path: AppRoutes.Main,
+      element: (
+        <>
+          <Layout />
+        </>
+      )
+    }
+  ])
   return (
-    <>
-      <h1>Привет, мир!</h1>
-    </>
+    <RouterProvider  router={router} />
   )
 }
   
