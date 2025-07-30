@@ -4,7 +4,7 @@ const Layout = () => {
   return (
     <>
       <header>
-        <h2>kdkdkddk</h2>
+        <p>kdkdkddk</p>
       </header>
       <Outlet />
     </>
