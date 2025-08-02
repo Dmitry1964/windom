@@ -1,0 +1,31 @@
+@use "src/styles/variables" as *;
+
+.header {
+  background-color: $color-white-70;
+  padding: 10px 0; 
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 6.5rem 63.35% auto 19%;
+    grid-template-rows: 1fr;
+    align-items: center;
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap:1.3rem
+  }
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+}
+
+.header__phone_link {
+  font-size: 1.8rem;
+  line-height: 130%;
+  margin-left: -2px;
+}

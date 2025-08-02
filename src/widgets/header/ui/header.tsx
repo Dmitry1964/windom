@@ -1,6 +1,7 @@
 import { Navbar } from "src/features/navbar";
 import cls from "./header.module.scss";
-import { Button } from "src/shared/button";
+import { Button } from "src/shared/ui/button/button";
+import { ButtonMods } from "src/shared/ui-types";
 const Header = () => {
   return (
     <header className={cls.header}>
@@ -20,9 +21,11 @@ const Header = () => {
               height={35}
               alt="Иконка телефона"
             />
-            <a href="tel:+79625552525">+7 (962) 555-25-25</a>
+            <a className={cls.header__phone_link} href="tel:+79625552525">+7 (962) 555-25-25</a>
           </div>
-          <Button options="primary">Заказать звонок</Button>
+          <div className={cls.header__button}>
+            <Button options={ButtonMods.Transparent}><span>Заказать звонок</span></Button>
+          </div>
         </div>
       </div>
     </header>

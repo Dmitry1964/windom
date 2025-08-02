@@ -1,0 +1,23 @@
+@use '/src/styles/variables.scss';
+
+.button {
+    font-size: 1.8rem;
+    line-height: 130%;
+    padding: 1.5rem 3rem;
+    border: 1px solid variables.$color-sandy-brown-2;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button__transparent {
+    background-color: transparent;
+
+    &:hover {
+        background-color: variables.$color-sazerac;
+    }
+
+    &:active {
+        background-color: variables.$color-tide;
+    }
+}

@@ -5,19 +5,22 @@ const Navbar = (): React.ReactNode => {
     <div className={cls.navbar}>
       <ul className={cls.navbar__list}>
         <li className={cls.navbar__item}>
-            <a href="#">Наши проекты</a>
+            <a className={cls.navbar__link} href="#">Наши проекты</a>
+            <img src='content/svg/icon-down.svg' alt="arrow-down" />
         </li>
         <li className={cls.navbar__item}>
-            <a href="#">Дома</a>
+            <a className={cls.navbar__link} href="#">Дома</a>
+            <img src='content/svg/icon-down.svg' alt="arrow-down" />
         </li>
         <li className={cls.navbar__item}>
-            <a href="#">Ипотека</a>
+            <a className={cls.navbar__link} href="#">Ипотека</a>
         </li>
         <li className={cls.navbar__item}>
-            <a href="#">О компании</a>
+            <a className={cls.navbar__link} href="#">О компании</a>
+            <img src='content/svg/icon-down.svg' alt="arrow-down" />
         </li>
         <li className={cls.navbar__item}>
-            <a href="#">Контакты</a>
+            <a className={cls.navbar__link} href="#">Контакты</a>
         </li>
       </ul>
     </div>
