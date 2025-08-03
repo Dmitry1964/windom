@@ -1,0 +1,40 @@
+import { Button } from "src/shared/ui/button/button";
+import cls from "./banner-main-page.module.scss";
+import { ButtonMods } from "src/shared/ui-types";
+
+const BannerMainPage = () => {
+    return (
+        <section className={cls.banner_mainpage}>
+            <div className={cls.banner_mainpage__wrapper}>
+                <div className={cls.banner_mainpage__image}>
+                    <picture>
+                        <source type="image/webp" srcSet="content/img/banner-main.webp 1x, content/img/banner-main@2x.webp 2x" />
+                        <img src="content/img/banner-main.png" srcSet="content/img/banner-main@2x.jpg 2x" alt="Фотография котеджа" />
+                    </picture>
+                </div>
+                <div className={cls.banner_mainpage__content}>
+                    <div className={cls.banner_mainpage__content_inner}>
+                        <div className={cls.banner_mainpage__content_title}>
+                            <h2>Строительная компания</h2>
+                            <span>win</span>
+                            <p>Мы строим дома, коттеджные поселки и таунхаусы в Казани</p>
+                            <div className={cls.banner_mainpage__content_button}>
+                                <Button options={ButtonMods.SandyBrown}>
+                                    <span>Подробнее о проектах</span>
+                                </Button>
+                                <Button>
+                                    <span>Задать вопрос</span>
+                                </Button>
+                            </div>
+                        </div>
+                        <div className={cls.banner_mainpage__content_video}>
+                            <p>Banner Main Page</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default BannerMainPage;

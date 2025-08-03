@@ -1,3 +1,5 @@
+@use '/src/styles/variables.scss' as *;
+
 .navbar {
     display: flex;
 }
@@ -16,6 +18,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    position: relative;
 
     &:not(:first-child) {
         // стили для всех элементов кроме первого
@@ -26,4 +29,22 @@
 .navbar__link {
     font-size: 1.8rem;
     line-height: 130%;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: $color-sandy-brown-2;
+    }
+
+    &:active {
+        color: $color-tide;
+    }
+}
+
+.navbar__arrow {
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar__arrow_active {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
 }

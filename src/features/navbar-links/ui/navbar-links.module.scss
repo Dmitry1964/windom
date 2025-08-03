@@ -1,0 +1,26 @@
+.navbar__links {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 235px;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  padding: 2rem;
+
+  &_active {
+    opacity: 1;
+    transform: translateY(1rem);
+  }
+}
+
+.navbar__link {
+  font-size: 1.8rem;
+  line-height: 130%;
+}

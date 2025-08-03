@@ -1,3 +1,3 @@
-import Navbar from "./ui/navbat";
+import Navbar from "./ui/navbar";
 
 export {Navbar};                        
