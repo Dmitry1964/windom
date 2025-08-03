@@ -54,3 +54,11 @@ export const about = [
         href: "#",
     },
 ]
+
+export const sizes = {
+    desktop: 1680,
+    laptop: 1280,
+    tablet: 1024,
+    mobile: 768,
+    mobileSmall: 375,
+}

@@ -3,7 +3,6 @@
 
 .button {
     border: 1px solid variables.$color-sandy-brown-2;
-    letter-spacing: 0.02em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -13,10 +12,20 @@
   line-height: 130%;
   padding: 1.5rem 3rem;
   background-color: transparent;
+  letter-spacing: 0.02em;
+
 
   @include vp-1679 {
     font-size: 1.6rem;
     line-height: auto;
+    padding: 1.4rem 3rem;
+    letter-spacing: 0.03em;
+  }
+
+  @include vp-1279 {
+    font-size: 1.4rem;
+    line-height: auto;
+    padding: 1rem 1.5rem;
   }
 
     &:hover {

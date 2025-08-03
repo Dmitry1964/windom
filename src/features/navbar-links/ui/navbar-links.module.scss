@@ -1,3 +1,6 @@
+@use '/src/styles/variables' as *;
+@use '/src/styles/mixins' as *;
+
 .navbar__links {
   position: absolute;
   top: 100%;
@@ -23,4 +26,23 @@
 .navbar__link {
   font-size: 1.8rem;
   line-height: 130%;
+  transition: color 0.3s ease-in-out;
+
+  @include vp-1679 {
+    font-size: 1.6rem;
+    line-height: auto;
+  }
+
+  @include vp-1279 {
+    font-size: 1.4rem;
+    line-height: auto;
+  }
+
+  &:hover {
+    color: $color-sandy-brown;
+  }
+
+  &:active {
+    color: $color-dorado;
+  }
 }

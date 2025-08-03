@@ -1,0 +1,30 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins.scss' as *;
+
+.button_mobile {
+  width: 3rem;
+  height: 3.2rem;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  padding: 0;
+
+    @include vp-374 {
+      width: 2.8rem;
+      height: 3rem;
+    }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 2.5rem;
+    height: 0.2rem;
+    left: calc(50% - 12px);
+    top: calc(50% - 1px);
+    background-color: $color-default-black;
+
+    box-shadow: 0 0.8rem 0 $color-default-black, 0 -0.8rem 0 $color-default-black;
+  }
+}
+

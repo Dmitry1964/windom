@@ -18,4 +18,8 @@
   @include mixins.vp-767 {
     padding: 0 40px;
   }
+
+  @include mixins.vp-374 {
+    padding: 0 15px;
+  }
 }
