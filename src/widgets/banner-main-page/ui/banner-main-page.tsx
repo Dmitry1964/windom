@@ -19,7 +19,7 @@ const BannerMainPage = () => {
                             <span>win</span>
                             <p>Мы строим дома, коттеджные поселки и таунхаусы в Казани</p>
                             <div className={cls.banner_mainpage__content_button}>
-                                <Button options={ButtonMods.SandyBrown}>
+                                <Button options={ButtonMods.Banner}>
                                     <span>Подробнее о проектах</span>
                                 </Button>
                                 <Button>
