@@ -1,24 +1,37 @@
 @use "src/styles/variables" as *;
+@use "src/styles/mixins" as *;
 
 .header {
   background-color: $color-white-70;
-  padding: 10px 0;
+  padding: 2.5rem 0 2.4rem;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+
+  @include vp-1679 {
+    padding: 2.7rem 0 1.9rem;
+  }
 
   &__wrapper {
     display: grid;
     grid-template-columns: 6.5rem 63.35% auto 19%;
     grid-template-rows: 1fr;
     align-items: center;
+
+    @include vp-1679 {
+      grid-template-columns: 5rem 63.3% auto 17.5%;
+    }
   }
 
   &__phone {
     display: flex;
     align-items: center;
-    gap:1.3rem
+    gap:1.3rem;
+
+    @include vp-1679 {
+      gap: 0.75rem;
+    }
   }
 
   &__button {
@@ -34,11 +47,26 @@
   margin-left: -2px;
   transition: color 0.3s ease-in-out;
 
+  @include vp-1679 {
+    font-size: 1.6rem;
+    line-height: auto;
+  }
+
   &:hover {
     color: $color-sandy-brown-2;
   }
 
   &:active {
     color: $color-tide;
+  }
+
+}
+
+.header__phone_icon {
+  width: 3.5rem;
+  height: 3.5rem;
+
+  @include vp-1679 {
+    width: 2.6rem;
   }
 }

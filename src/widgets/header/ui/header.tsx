@@ -5,6 +5,7 @@ import { ButtonMods } from "src/shared/ui-types";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+
   return (
     <header className={cls.header}>
       <div className="container">
@@ -20,15 +21,16 @@ const Header = () => {
           <Navbar />
           <div className={cls.header__phone}>
             <img
-              src="content/svg/icon-phone.svg"
               width={35}
               height={35}
+              className={cls.header__phone_icon}
+              src="content/svg/icon-phone.svg"
               alt="Иконка телефона"
             />
             <a className={cls.header__phone_link} href="tel:+79625552525">+7 (962) 555-25-25</a>
           </div>
           <div className={cls.header__button}>
-            <Button options={ButtonMods.Transparent}><span>Заказать звонок</span></Button>
+            <Button options={ButtonMods.Header}><span>Заказать звонок</span></Button>
           </div>
         </div>
       </div>

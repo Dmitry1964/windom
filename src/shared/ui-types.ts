@@ -1,6 +1,6 @@
 export enum ButtonMods {
-    Transparent = 'transparent',
-    SandyBrown = 'sandybrown',
+    Header = 'header',
+    Banner = 'banner',
 }
 
 export enum NavbarLinkNames {

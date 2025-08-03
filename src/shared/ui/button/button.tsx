@@ -9,9 +9,9 @@ type ButtonPropsType = {
 
 const Button = (props : ButtonPropsType)  => {
     const {children, options} = props;
-    
+
     return (
-        <button className={cn(cls.button, options && cls[`button__${options}`], cls.navbar__item)}>
+        <button className={cn(cls.button, options && cls[`button__${options}`])}>
             {children}
         </button>
     )

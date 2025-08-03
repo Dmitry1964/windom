@@ -5,10 +5,10 @@
   min-height: 100%;
   max-width: 1680px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 8rem;
 
-  @include mixins.vp-1279 {
-    padding: 0 60  px;
+  @include mixins.vp-1679 {
+    padding: 0 6rem;
   }
 
   @include mixins.vp-1023 {
