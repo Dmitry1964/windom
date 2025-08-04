@@ -1,10 +1,21 @@
 import cls from './button-mobile.module.scss';
 
-const ButtonMobile = () => {
-  return (
-    <button className={cls.button_mobile}>
+type ButtonMobileProps = {
+  handleButtonMobile: () => void;
+  status: boolean;
+}
 
-    </button>
+const ButtonMobile = (props : ButtonMobileProps) => {
+
+  const {handleButtonMobile, status} = props;
+  return (
+    <>
+      {status ? (
+        <button onClick={handleButtonMobile} className={cls.button_mobile} />
+      ) : (
+        <button onClick={handleButtonMobile} className={cls.button_mobile_close} />
+      )}
+    </>
   )
 }
 

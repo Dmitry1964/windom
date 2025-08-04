@@ -12,9 +12,16 @@ const Header = () => {
   const initSize = window.innerWidth;
 
   const [size, setSize] = useState(initSize);
+  const [isOpen, setIsOpen] = useState(true)
   const handleResize = useCallback(() => {
     setSize(window.innerWidth)
   }, [])
+
+  const handleButtonMobile = useCallback(() => {
+    console.log(isOpen);
+
+    setIsOpen(!isOpen);
+  }, [isOpen])
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -63,8 +70,7 @@ const Header = () => {
               alt="Иконка телефона"
             />
             </Link>
-            <ButtonMobile />
-
+            <ButtonMobile handleButtonMobile={handleButtonMobile} status={isOpen}/>
             </>
           }
         </div>
