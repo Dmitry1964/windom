@@ -1,0 +1,20 @@
+
+
+.banner_mainpage__wrapper {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: auto;
+}
+
+.banner_mainpage__image,
+.banner_mainpage__content {
+grid-column-start: 1;
+grid-column-end: 2;
+grid-row-start: 1;
+grid-row-end: 2;
+}
+
+.banner_mainpage__content {
+  align-self: flex-end;
+  padding-bottom: 11.4rem;
+}
