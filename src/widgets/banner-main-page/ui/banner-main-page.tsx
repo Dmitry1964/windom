@@ -2,7 +2,10 @@ import { Button } from "src/shared/ui/button/button";
 import cls from "./banner-main-page.module.scss";
 import { ButtonMods } from "src/shared/ui-types";
 
+
+
 const BannerMainPage = () => {
+
     return (
         <section className={cls.banner_mainpage}>
           <div className={cls.banner_mainpage__wrapper}>
@@ -15,8 +18,8 @@ const BannerMainPage = () => {
             <div className={cls.banner_mainpage__content}>
                 <div className={cls.banner_mainpage__content_inner}>
                     <div className={cls.banner_mainpage__content_title}>
-                        <h2>Строительная компания</h2>
-                        <div><span id="win">WIN</span><span id="dom">DOM</span></div>
+                        <h2 id="content-title">Строительная компания</h2>
+                        <div className={cls.banner_mainpage__title}><span id="win">WIN</span><span id="dom">DOM</span></div>
                         <p className={cls.banner_mainpage__content_slogan}>Мы строим дома, коттеджные поселки и таунхаусы в Казани</p>
                         <div className={cls.banner_mainpage__content_button}>
                             <Button options={ButtonMods.Banner}>
