@@ -1,8 +1,8 @@
-@use '/src/styles/variables.scss';
+@use '/src/styles/variables.scss' as *;
 @use '/src/styles/mixins.scss' as *;
 
 .button {
-    border: 1px solid variables.$color-sandy-brown-2;
+    border: 1px solid $color-sandy-brown-2;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -29,10 +29,31 @@
   }
 
     &:hover {
-        background-color: variables.$color-sazerac;
+        background-color: $color-sazerac;
     }
 
     &:active {
-        background-color: variables.$color-tide;
+        background-color: $color-tide;
     }
+}
+
+.button__banner {
+  font-size: 1.8rem;
+  line-height: auto;
+  font-weight: 700;
+  color: $color-default-white;
+  background-color: $color-sandy-brown;
+  padding: 1.5rem 3rem;
+  letter-spacing: -0.5px;
+
+}
+
+.button__question {
+  font-size: 1.8rem;
+  line-height: auto;
+  font-weight: 700;
+  color: $color-default-white;
+  background-color: $color-night-rider-70;
+  padding: 1.5rem 4.4rem 1.5rem 3rem;
+  letter-spacing: -0.5px;
 }

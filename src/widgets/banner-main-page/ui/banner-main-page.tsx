@@ -16,19 +16,21 @@ const BannerMainPage = () => {
                 <div className={cls.banner_mainpage__content_inner}>
                     <div className={cls.banner_mainpage__content_title}>
                         <h2>Строительная компания</h2>
-                        <img src="content/svg/win.svg" alt="windom" />
-                        <p>Мы строим дома, коттеджные поселки и таунхаусы в Казани</p>
+                        <div><span id="win">WIN</span><span id="dom">DOM</span></div>
+                        <p className={cls.banner_mainpage__content_slogan}>Мы строим дома, коттеджные поселки и таунхаусы в Казани</p>
                         <div className={cls.banner_mainpage__content_button}>
                             <Button options={ButtonMods.Banner}>
                                 <span>Подробнее о проектах</span>
                             </Button>
-                            <Button>
+                            <Button options={ButtonMods.Question}>
                                 <span>Задать вопрос</span>
                             </Button>
                         </div>
                     </div>
                     <div className={cls.banner_mainpage__content_video}>
-                        <p>VIDEO</p>
+                        <a href="#">
+                          <img src="content/svg/video-link.svg" width={328} height={180} alt="Смотреть видео" />
+                        </a>
                     </div>
                 </div>
             </div>

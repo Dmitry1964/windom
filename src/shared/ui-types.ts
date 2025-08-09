@@ -1,6 +1,7 @@
 export enum ButtonMods {
     Header = 'header',
     Banner = 'banner',
+    Question = 'question'
 }
 
 export enum NavbarLinkNames {
