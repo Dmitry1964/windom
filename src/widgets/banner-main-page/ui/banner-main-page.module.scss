@@ -1,6 +1,20 @@
 @use '/src/styles/mixins.scss' as *;
 @use '/src/styles/variables.scss' as *;
 
+.banner_main__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.banner_main__image,
+.banner_main__content {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
 .banner_main__image img {
 
   @include vp-1679 {
@@ -20,4 +34,72 @@
   @include vp-379 {
     height: 700px;
   }
+}
+
+.banner_main__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.banner_main__content {
+  align-self: flex-end;
+  margin-bottom: 11.3rem;
+}
+
+.banner_main__title {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.banner_main__title {
+  font-family: $ff-second;
+  @include font-size(30px, 40px, $vp-1280, $vp-1680);
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  color: $color-default-white;
+  text-transform: uppercase;
+}
+
+[id='banner-title'] {
+  display: block;
+  margin-bottom: -67px;
+  // transform: translateY(0);
+}
+
+[id='win'],
+[id='dom'] {
+  @include font-size(150px, 200px, $vp-1280, $vp-1680);
+  color: $color-default-white;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+[id='win'] {
+  color: $color-sandy-brown
+}
+
+.banner_main__slogan {
+  @include font-size(24px, 32px, $vp-1280, $vp-1680);
+  color: $color-default-white;
+  margin: -6px 0 0 ;
+  padding: 0;
+}
+
+.banner_main__buttons {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: flex-end;
+}
+
+.banner_main__link {
+  justify-self: flex-end;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin-right: 6px;
 }

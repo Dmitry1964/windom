@@ -12,14 +12,14 @@
   }
 
   @include mixins.vp-1279 {
-    padding: 0 60px;
+    padding: 0 6rem;
   }
 
   @include mixins.vp-833 {
-    padding: 0 40px;
+    padding: 0 4rem;
   }
 
   @include mixins.vp-379 {
-    padding: 0 15px;
+    padding: 0 1.5rem;
   }
 }

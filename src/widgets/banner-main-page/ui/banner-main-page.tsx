@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import cls from './banner-main-page.module.scss';
 import { sizes } from 'src/shared/constants';
+import { Button } from 'src/shared/ui/button/button';
+import { ButtonMods } from 'src/shared/ui-types';
 
 
 const BannerMainPage = () => {
@@ -35,7 +37,23 @@ const BannerMainPage = () => {
               </picture>
             }
           </div>
-          <div className={cls.banner_main__content}></div>
+          <div className={cls.banner_main__content}>
+            <div className='container'>
+              <h2 className={cls.banner_main__title}><span id='banner-title'>Строительная компания</span><br/>
+                <span id='win'>win</span><span id='dom'>dom</span>
+              </h2>
+              <div className={cls.banner_main__inner}>
+                <p className={cls.banner_main__slogan}>Мы строим дома, коттеджные поселки и&nbsp;таунхаусы в Казани</p>
+                <div className={cls.banner_main__buttons}>
+                  <Button options={ButtonMods.Banner}>Подробнее о проектах</Button>
+                  <Button options={ButtonMods.Question}>Задать вопрос</Button>
+                </div>
+                <a href="#" className={cls.banner_main__link}>
+                  <img src="content/svg/video-link.svg" width={328} height={180} alt="Воспроизвести видео" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     );
