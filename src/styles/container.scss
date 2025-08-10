@@ -11,15 +11,15 @@
     padding: 0 6rem;
   }
 
-  @include mixins.vp-1023 {
+  @include mixins.vp-1279 {
     padding: 0 60px;
   }
 
-  @include mixins.vp-767 {
+  @include mixins.vp-833 {
     padding: 0 40px;
   }
 
-  @include mixins.vp-374 {
+  @include mixins.vp-379 {
     padding: 0 15px;
   }
 }

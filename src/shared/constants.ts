@@ -58,7 +58,7 @@ export const about = [
 export const sizes = {
     desktop: 1680,
     laptop: 1280,
-    tablet: 1024,
-    mobile: 768,
-    mobileSmall: 375,
+    tablet: 834,
+    mobile: 380,
+    mobileSmall: 320,
 }

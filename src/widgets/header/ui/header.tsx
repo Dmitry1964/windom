@@ -26,7 +26,7 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [size]);
+  }, [handleResize]);
 
   return (
     <header className={cls.header}>
