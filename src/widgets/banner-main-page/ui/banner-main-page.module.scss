@@ -45,6 +45,10 @@
 .banner_main__content {
   align-self: flex-end;
   margin-bottom: 11.3rem;
+
+  @include vp-1679 {
+    margin-bottom: 14rem;
+  }
 }
 
 .banner_main__title {
@@ -52,6 +56,7 @@
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
+
 }
 
 .banner_main__title {
@@ -66,8 +71,12 @@
 
 [id='banner-title'] {
   display: block;
-  margin-bottom: -67px;
+  margin-bottom: -6.7rem;
   // transform: translateY(0);
+
+  @include vp-1679 {
+    margin-bottom: -7rem;
+  }
 }
 
 [id='win'],
@@ -76,6 +85,10 @@
   color: $color-default-white;
   text-transform: uppercase;
   font-weight: 800;
+
+  @include vp-1679 {
+    margin-bottom: 1rem;
+  }
 }
 
 [id='win'] {
@@ -87,6 +100,10 @@
   color: $color-default-white;
   margin: -6px 0 0 ;
   padding: 0;
+
+  @include vp-1679 {
+    margin: 8px 0 70px;
+  }
 }
 
 .banner_main__buttons {
@@ -98,8 +115,21 @@
 }
 
 .banner_main__link {
+  display: flex;
   justify-self: flex-end;
   grid-row-start: 1;
   grid-row-end: 3;
   margin-right: 6px;
+
+  @include vp-1679 {
+    margin-right: 35px;
+  }
+
+  & img {
+    @include vp-1679 {
+      @include size-height(120px, 180px, $vp-1280, $vp-1680);
+      align-self: flex-end;
+      }
+  
+  }
 }

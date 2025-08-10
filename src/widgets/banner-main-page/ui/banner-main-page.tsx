@@ -49,7 +49,7 @@ const BannerMainPage = () => {
                   <Button options={ButtonMods.Question}>Задать вопрос</Button>
                 </div>
                 <a href="#" className={cls.banner_main__link}>
-                  <img src="content/svg/video-link.svg" width={328} height={180} alt="Воспроизвести видео" />
+                  <img src="content/svg/video-link.svg" alt="Воспроизвести видео" />
                 </a>
               </div>
             </div>
