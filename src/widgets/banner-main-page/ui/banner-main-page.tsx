@@ -48,9 +48,23 @@ const BannerMainPage = () => {
                   <Button options={ButtonMods.Banner}>Подробнее о проектах</Button>
                   <Button options={ButtonMods.Question}>Задать вопрос</Button>
                 </div>
-                <a href="#" className={cls.banner_main__link}>
-                  <img src="content/svg/video-link.svg" alt="Воспроизвести видео" />
-                </a>
+                {size >= sizes.laptopSmall &&
+                  <a href="#" className={cls.banner_main__link}>
+                    <img src="content/svg/video-link.svg" alt="Воспроизвести видео" />
+                  </a>
+                }
+                {size < sizes.laptopSmall && size >= sizes.tablet &&
+                  <a href="#" className={cls.banner_main__link}>
+                    <img src="content/svg/video-link-tablet.svg" width={90}  alt="Воспроизвести видео" />
+                  </a>
+                }
+                {size < sizes.tablet &&
+                  <a href="#" className={cls.banner_main__link}>
+                    <img src="content/svg/video-link-mobile.svg" width={187} height={80} alt="Воспроизвести видео" />
+                  </a>
+                }
+
+
               </div>
             </div>
           </div>

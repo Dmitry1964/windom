@@ -41,8 +41,8 @@ const Header = () => {
               alt="Логотип компании WINDOM"
             />
           </Link>
-          {size >= sizes.tablet && <Navbar />}
-          {size >= sizes.tablet && (
+          {size >= sizes.laptopSmall && <Navbar />}
+          {size >= sizes.laptopSmall && (
             <>
               <div className={cls.header__phone}>
                 <img
@@ -59,7 +59,7 @@ const Header = () => {
           </div>
             </>
           )}
-          {size < sizes.tablet &&
+          {size < sizes.laptopSmall &&
             <>
             <Link to='/'>
             <img

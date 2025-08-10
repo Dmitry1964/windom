@@ -40,6 +40,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
+
+  @include vp-1279 {
+    grid-template-columns: 1fr 30%;
+  }
+
+  @include vp-833 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .banner_main__content {
@@ -49,6 +57,14 @@
   @include vp-1679 {
     margin-bottom: 14rem;
   }
+
+  @include vp-1279 {
+    margin-bottom: 10.5rem;
+  }
+
+  @include vp-833 {
+    margin-bottom: 11.7rem;;
+  }
 }
 
 .banner_main__title {
@@ -57,9 +73,6 @@
   grid-row-start: 1;
   grid-row-end: 2;
 
-}
-
-.banner_main__title {
   font-family: $ff-second;
   @include font-size(30px, 40px, $vp-1280, $vp-1680);
   font-weight: 500;
@@ -67,6 +80,14 @@
   padding: 0;
   color: $color-default-white;
   text-transform: uppercase;
+
+  @include vp-1279 {
+    @include font-size(27px, 30px, $vp-834, $vp-1280);
+  }
+
+  @include vp-833 {
+    @include font-size(16px, 27px, $vp-380, $vp-834);
+  }
 }
 
 [id='banner-title'] {
@@ -76,6 +97,14 @@
 
   @include vp-1679 {
     margin-bottom: -7rem;
+  }
+
+  @include vp-1279 {
+    margin-bottom: -5.5rem
+  }
+
+  @include vp-833 {
+    margin-bottom: -2rem;
   }
 }
 
@@ -88,6 +117,14 @@
 
   @include vp-1679 {
     margin-bottom: 1rem;
+  }
+
+  @include vp-1279 {
+    @include font-size(120px, 150px, $vp-834, $vp-1280);
+  }
+
+  @include vp-833 {
+    @include font-size(60px, 120px, $vp-380, $vp-834);
   }
 }
 
@@ -103,6 +140,17 @@
 
   @include vp-1679 {
     margin: 8px 0 70px;
+  }
+
+  @include vp-1279 {
+    @include font-size(20px, 24px, $vp-834, $vp-1280);
+    margin: -0.5rem 0 6rem;
+  }
+
+  @include vp-833 {
+    @include font-size(16px, 20px, $vp-380, $vp-834);
+    margin: 0 0 5rem;
+    width: 80%;
   }
 }
 
@@ -125,11 +173,29 @@
     margin-right: 35px;
   }
 
+  @include vp-1023 {
+    margin-right: 0;
+  }
+
+  @include vp-767 {
+    position: absolute;
+    top: 12.5rem;
+    left: 40%;
+  }
+
+
   & img {
     @include vp-1679 {
       @include size-height(120px, 180px, $vp-1280, $vp-1680);
       align-self: flex-end;
       }
+
+    @include vp-1023 {
+      height: 9rem;
+      margin-bottom: -0.5rem;
+      margin-right: 0.5rem;
+    }
+
   
   }
 }
