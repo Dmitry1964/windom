@@ -3,13 +3,19 @@ import cls from './banner-main-page.module.scss';
 import { sizes } from 'src/shared/constants';
 import { Button } from 'src/shared/ui/button/button';
 import { ButtonMods } from 'src/shared/ui-types';
+import {useGSAP} from '@gsap/react';
+import {gsap} from 'gsap';
+import {CustomEase} from 'gsap/CustomEase';
 
 
 const BannerMainPage = () => {
 
   const initViewPort = window.innerWidth;
+  gsap.registerPlugin(CustomEase);
 
   const [size, setSize] = useState(initViewPort);
+  const tl = gsap.timeline();
+  CustomEase.create('win', "M0,0 C0.126,0.382 0.53,1.051 0.74,1.089 0.867,1.112 0.832,1.091 1,1 ");
 
   const handleResize = useCallback(() => {
     setSize(window.innerWidth);
@@ -19,6 +25,14 @@ const BannerMainPage = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [handleResize]);
+
+  useGSAP(() => {
+
+    tl.to('#win', {opacity: 1, y: 0, ease: 'win'});
+    tl.to('#dom', {opacity: 1, y: 0, ease: 'win'});
+    tl.to('#banner-title', {opacity: 1, y: 0, ease: 'win'})
+    // GSAP анимации можно добавить здесь
+  });
 
     return (
       <section className={cls.banner_main}>

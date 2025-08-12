@@ -93,7 +93,8 @@
 [id='banner-title'] {
   display: block;
   margin-bottom: -6.7rem;
-  // transform: translateY(0);
+  transform: translateY(-150px);
+  opacity: 0;
 
   @include vp-1679 {
     margin-bottom: -7rem;
@@ -114,6 +115,9 @@
   color: $color-default-white;
   text-transform: uppercase;
   font-weight: 800;
+  display: inline-block;
+  transform: translateY(-150px);
+  opacity: 0 ;
 
   @include vp-1679 {
     margin-bottom: 1rem;
@@ -129,7 +133,7 @@
 }
 
 [id='win'] {
-  color: $color-sandy-brown
+  color: $color-sandy-brown;
 }
 
 .banner_main__slogan {
