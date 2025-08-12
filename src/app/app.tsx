@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { AppRoutes } from "./routes/routes"
-import Layout from "src/pages/layout/ui/layout"
-import MainPage from "src/pages/main-page/ui/main-page"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AppRoutes } from "./routes/routes";
+import Layout from "src/pages/layout/ui/layout";
+import MainPageLazy from "src/pages/main-page/ui/main-page-lazy";
+import { Suspense } from "react";
 
-const App = ()  => {
-
+const App = () => {
   const router = createBrowserRouter([
     {
       path: AppRoutes.Main,
@@ -16,15 +16,16 @@ const App = ()  => {
       children: [
         {
           path: AppRoutes.Main,
-          element: <MainPage />
-        }
-      ]
-    }
-  ])
+          element: <MainPageLazy />,
+        },
+      ],
+    },
+  ]);
   return (
-    <RouterProvider  router={router} />
-  )
-}
-  
-  export default App
-  
+    <Suspense fallback={<div>Loading</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
+};
+
+export default App;

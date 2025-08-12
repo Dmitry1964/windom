@@ -1,10 +1,12 @@
+import { About } from "src/widgets/about";
 import { BannerMainPage } from "src/widgets/banner-main-page";
 
 
 const MainPage = () => {
   return (
-    <main>
+    <main>  
       <BannerMainPage />
+      <About/>
     </main>
   );
 };
