@@ -1,6 +1,21 @@
+import { useCallback, useEffect, useState } from "react";
 import cls from "./about.module.scss";
+import { sizes } from "src/shared/constants";
 
 const About = () => {
+
+  const initScreenSize = window.innerWidth;
+
+  const [screenWidth, setScreenWidth] = useState(initScreenSize);
+  const handleResize = useCallback(() => {
+    setScreenWidth(window.innerWidth)
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [handleResize])
+
   return (
     <section className={cls.about}>
       <div className="container">
@@ -66,19 +81,37 @@ const About = () => {
 
           </ul>
           <div className={cls.about__image}>
+            {screenWidth >= sizes.desktopSmall &&
             <picture>
-              <source
-                type="image/webp"
-                srcSet="content/img/about-img.webp 1x, content/img/about-img@2x.webp 2x"
-              />
-              <img
-                src="content/img/about-img.jpg"
-                width={795}
-                height={499}
-                srcSet="content/img/about-img@2x.jpg 2x"
-                alt="Коттедж  у дороги"
-              />
-            </picture>
+            <source
+              type="image/webp"
+              srcSet="content/img/about-img.webp 1x, content/img/about-img@2x.webp 2x"
+            />
+            <img
+              src="content/img/about-img.jpg"
+              width={795}
+              height={499}
+              srcSet="content/img/about-img@2x.jpg 2x"
+              alt="Коттедж  у дороги"
+            />
+          </picture>
+          }
+          {screenWidth < sizes.desktopSmall &&
+            <picture>
+            <source
+              type="image/webp"
+              srcSet="content/img/about-img-notebook.webp 1x, content/img/about-img-notebook@2x.webp 2x"
+            />
+            <img
+              src="content/img/about-img-notebook.jpg"
+              width={550}
+              height={450}
+              srcSet="content/img/about-img-notebook@2x.jpg 2x"
+              alt="Коттедж  у дороги"
+            />
+          </picture>
+
+          }
           </div>
         </div>
       </div>

@@ -180,7 +180,7 @@
   height: clamp(#{$min-size}, #{$fluid-value}, #{$max-size});
 }
 
-@mixin fluid-padding-top($min-size, $max-size, $min-viewport-width, $max-viewport-width) {
+@mixin padding-top($min-size, $max-size, $min-viewport-width, $max-viewport-width) {
   $slope: math.div($max-size - $min-size, $max-viewport-width - $min-viewport-width);
   $y-intercept: $min-size - $slope * $min-viewport-width;
   $fluid-value: calc(#{$y-intercept} + #{$slope * 100}vw);
@@ -188,7 +188,7 @@
   padding-top: clamp(#{$min-size}, #{$fluid-value}, #{$max-size});
 }
 
-@mixin fluid-padding-bottom($min-size, $max-size, $min-viewport-width, $max-viewport-width) {
+@mixin padding-bottom($min-size, $max-size, $min-viewport-width, $max-viewport-width) {
   $slope: math.div($max-size - $min-size, $max-viewport-width - $min-viewport-width);
   $y-intercept: $min-size - $slope * $min-viewport-width;
   $fluid-value: calc(#{$y-intercept} + #{$slope * 100}vw);

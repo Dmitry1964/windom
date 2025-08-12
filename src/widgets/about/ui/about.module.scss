@@ -3,7 +3,8 @@
 
 
 .about {
-  padding: 15rem 0;;
+  @include padding-top(80px, 150px, $vp-1280, $vp-1680);
+  @include padding-bottom(80px, 150px, $vp-1280, $vp-1680);
 }
 
 .about__list {
@@ -12,7 +13,7 @@
   list-style: none;
   padding: 0;
   margin: 0 0 15rem;
-  column-gap: 1.64%;
+  column-gap: 25px;
 }
 
 .about__item {
@@ -42,6 +43,12 @@
   grid-template-rows: repeat(3, auto);
   column-gap: 5.59%;
   row-gap: 5rem;
+
+  @include vp-1679 {
+    grid-template-columns: 46.12% 47.41%;
+    column-gap: 7.5rem;
+    row-gap: 5.4rem;
+  }
   
 }
 
@@ -60,10 +67,19 @@
 
 .about__descriptions {
   width: 95%;
+
+  @include vp-1439 {
+    width: 100%;
+  }
   & p {
     @include font-size(22px, 30px, $vp-1280, $vp-1680);
     margin: 0 0 2rem;
     line-height: 3.4rem;
+
+    @include vp-1439 {
+      margin: 0 0 2.8rem;
+      line-height: 3.3rem;
+    }
   }
 
   & span {
@@ -86,16 +102,22 @@
 
   position: relative;
 
+  @include vp-1679 {
+    justify-self: flex-end;
+  }
+
   & ::before {
     content: '';
     position: absolute;
     // 92%
-    width: 730px; 
+    // @include size-width(488px, 730px, $vp-1280, $vp-1680); 
     // 111.6%
-    height: 557px;
+    // height: 98%;
     border: 1px solid $color-sandy-brown;
-    top: 10px;
+    top: 2%;
+    bottom: 0;
     left: 30px;
+    right: 35px;
     z-index: -10;
   }
 }
@@ -105,6 +127,17 @@
   column-gap: 2.5rem;
   list-style: none;
   padding: 0;
+  margin: 1rem 0 0;
   justify-self: flex-end;
-  align-self: flex-end;
+
+  @include vp-1439 {
+    column-gap: 2rem;
+    margin: 0;
+  }
+}
+
+.about__social_link {
+  @include vp-1439 {
+    align-items: flex-start;
+  }
 }
