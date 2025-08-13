@@ -1,39 +1,94 @@
 import { useCallback, useEffect, useState } from "react";
 import cls from "./about.module.scss";
 import { sizes } from "src/shared/constants";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const About = () => {
-
   const initScreenSize = window.innerWidth;
+
+  gsap.registerEffect({
+    name: "counter",
+    extendTimeline: true,
+    defaults: {
+      end: 0,
+      duration: 0.5,
+      ease: "power1",
+      increment: 1,
+    },
+
+    effect: (
+      targets: HTMLElement[],
+      config: { end: number; duration: number; ease: string; increment: number }
+    ) => {
+      const tl = gsap.timeline();
+      const num = targets[0].innerText.replace(/,/g, "");
+      targets[0].innerText = num;
+
+      tl.to(
+        targets,
+        {
+          duration: config.duration,
+          innerText: config.end,
+          // snap: {innerText: config.increment}
+          modifiers: {
+            innerText: function (innerText: string) {
+              const value = Number(innerText);
+              const snapped = gsap.utils.snap(
+                config.increment,
+                isNaN(value) ? 0 : value
+              );
+              return String(snapped);
+            },
+          },
+          ease: config.ease,
+        },
+        0
+      );
+
+      return tl;
+    },
+  });
 
   const [screenWidth, setScreenWidth] = useState(initScreenSize);
   const handleResize = useCallback(() => {
-    setScreenWidth(window.innerWidth)
-  }, [])
+    setScreenWidth(window.innerWidth);
+  }, []);
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [handleResize])
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+
+    tl.from("#about-item-1", { opacity: 0 });
+    tl.counter("#years", { end: 10, ease: "linear" }, "-=0.5");
+    tl.from("#about-item-2", { opacity: 0 }, "+=0.5");
+    tl.counter("#area", { end: 220, duration: 0.6 }, "-=0.5");
+    tl.from("#about-item-3", { opacity: 0 }, "+=0.5");
+    tl.counter("#people", { end: 5023, increment: 10 }, "-=0.5");
+  });
 
   return (
     <section className={cls.about}>
       <div className="container">
         <ul className={cls.about__list}>
-          <li className={cls.about__item}>
-            <span id="years">10</span>
+          <li id="about-item-1" className={cls.about__item}>
+            <span id="years">0</span>
             <p className={cls.about__item_desc}>
               Лет успешного опыта продаж загородной недвижимости
             </p>
           </li>
-          <li className={cls.about__item}>
-            <span id="area">1051</span>
+          <li id="about-item-2" className={cls.about__item}>
+            <span id="area">500</span>
             <p className={cls.about__item_desc}>
               Га - площадь наших комфортных посёлков европейского класса
             </p>
           </li>
-          <li className={cls.about__item}>
-            <span id="people">5063</span>
+          <li id="about-item-3" className={cls.about__item}>
+            <span id="people">4000</span>
             <p className={cls.about__item_desc}>
               Счастливых владельцев загородных домов
             </p>
@@ -78,40 +133,38 @@ const About = () => {
                 <img src="content/svg/icon-t.svg" alt="Сылка youtube" />
               </a>
             </li>
-
           </ul>
           <div className={cls.about__image}>
-            {screenWidth >= sizes.desktopSmall &&
-            <picture>
-            <source
-              type="image/webp"
-              srcSet="content/img/about-img.webp 1x, content/img/about-img@2x.webp 2x"
-            />
-            <img
-              src="content/img/about-img.jpg"
-              width={795}
-              height={499}
-              srcSet="content/img/about-img@2x.jpg 2x"
-              alt="Коттедж  у дороги"
-            />
-          </picture>
-          }
-          {screenWidth < sizes.desktopSmall &&
-            <picture>
-            <source
-              type="image/webp"
-              srcSet="content/img/about-img-notebook.webp 1x, content/img/about-img-notebook@2x.webp 2x"
-            />
-            <img
-              src="content/img/about-img-notebook.jpg"
-              width={550}
-              height={450}
-              srcSet="content/img/about-img-notebook@2x.jpg 2x"
-              alt="Коттедж  у дороги"
-            />
-          </picture>
-
-          }
+            {screenWidth >= sizes.desktopSmall && (
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="content/img/about-img.webp 1x, content/img/about-img@2x.webp 2x"
+                />
+                <img
+                  src="content/img/about-img.jpg"
+                  width={795}
+                  height={499}
+                  srcSet="content/img/about-img@2x.jpg 2x"
+                  alt="Коттедж  у дороги"
+                />
+              </picture>
+            )}
+            {screenWidth < sizes.desktopSmall && (
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="content/img/about-img-notebook.webp 1x, content/img/about-img-notebook@2x.webp 2x"
+                />
+                <img
+                  src="content/img/about-img-notebook.jpg"
+                  width={550}
+                  height={450}
+                  srcSet="content/img/about-img-notebook@2x.jpg 2x"
+                  alt="Коттедж  у дороги"
+                />
+              </picture>
+            )}
           </div>
         </div>
       </div>
