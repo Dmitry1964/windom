@@ -3,9 +3,13 @@ import cls from "./about.module.scss";
 import { sizes } from "src/shared/constants";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const About = () => {
+  gsap.registerPlugin(ScrollTrigger)
   const initScreenSize = window.innerWidth;
+
+
 
   gsap.registerEffect({
     name: "counter",
@@ -61,20 +65,25 @@ const About = () => {
   }, [handleResize]);
 
   useGSAP(() => {
-    const tl = gsap.timeline();
+    const tl1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#about-counter',
+        start: 'top center',
+      }
+    });
 
-    tl.from("#about-item-1", { opacity: 0 });
-    tl.counter("#years", { end: 10, ease: "linear" }, "-=0.5");
-    tl.from("#about-item-2", { opacity: 0 }, "+=0.5");
-    tl.counter("#area", { end: 220, duration: 0.6 }, "-=0.5");
-    tl.from("#about-item-3", { opacity: 0 }, "+=0.5");
-    tl.counter("#people", { end: 5023, increment: 10 }, "-=0.5");
+    tl1.from("#about-item-1", { opacity: 0 });
+    tl1.counter("#years", { end: 10, ease: "linear" }, "-=0.5");
+    tl1.from("#about-item-2", { opacity: 0 }, "+=0.5");
+    tl1.counter("#area", { end: 1051, duration: 0.6 }, "-=0.5");
+    tl1.from("#about-item-3", { opacity: 0 }, "+=0.5");
+    tl1.counter("#people", { end: 5063, increment: 1 }, "-=0.5");
   });
 
   return (
     <section className={cls.about}>
       <div className="container">
-        <ul className={cls.about__list}>
+        <ul id="about-counter" className={cls.about__list}>
           <li id="about-item-1" className={cls.about__item}>
             <span id="years">0</span>
             <p className={cls.about__item_desc}>
