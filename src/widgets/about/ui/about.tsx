@@ -109,7 +109,7 @@ const About = () => {
           </h2>
           <div className={cls.about__descriptions}>
             <p>
-              Компания<span> Win Dom</span> основана в 2012 году.
+              Компания<span> Win Dom</span> основана в&nbsp;2012&nbsp;году.
             </p>
             <p>
               Основным направлением девелопера является строительство загородных
@@ -159,7 +159,7 @@ const About = () => {
                 />
               </picture>
             )}
-            {screenWidth < sizes.desktopSmall && (
+            {screenWidth < sizes.desktopSmall && screenWidth >= sizes.tablet && (
               <picture>
                 <source
                   type="image/webp"
@@ -174,22 +174,21 @@ const About = () => {
                 />
               </picture>
             )}
-            {/* {screenWidth < sizes.laptopSmall && (
+            {screenWidth < sizes.tablet && (
               <picture>
                 <source
                   type="image/webp"
-                  srcSet="content/img/about-img-tablet.webp 1x, content/img/about-img-tablet@2x.webp 2x"
+                  srcSet="content/img/about-img-mobile.webp 1x, content/img/about-img-mobile@2x.webp 2x"
                 />
                 <img
-                  src="content/img/about-img-tablet.jpg"
+                  src="content/img/about-img-mobile.jpg"
                   width={550}
                   height={450}
-                  srcSet="content/img/about-img-tablet@2x.jpg 2x"
+                  srcSet="content/img/about-img-mobile@2x.jpg 2x"
                   alt="Коттедж  у дороги"
                 />
               </picture>
-            )} */}
-
+            )}
           </div>
         </div>
       </div>

@@ -28,10 +28,8 @@
   }
 
   @include vp-833 {
-    @include size-height(653px, 653px, $vp-380, $vp-834)
-  }
-
-  @include vp-379 {
+    @include size-height(653px, 653px, $vp-380, $vp-834);
+    width: 100%;
     height: 700px;
   }
 }
