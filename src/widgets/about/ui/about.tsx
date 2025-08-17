@@ -174,6 +174,22 @@ const About = () => {
                 />
               </picture>
             )}
+            {/* {screenWidth < sizes.laptopSmall && (
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="content/img/about-img-tablet.webp 1x, content/img/about-img-tablet@2x.webp 2x"
+                />
+                <img
+                  src="content/img/about-img-tablet.jpg"
+                  width={550}
+                  height={450}
+                  srcSet="content/img/about-img-tablet@2x.jpg 2x"
+                  alt="Коттедж  у дороги"
+                />
+              </picture>
+            )} */}
+
           </div>
         </div>
       </div>

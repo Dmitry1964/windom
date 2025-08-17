@@ -17,6 +17,7 @@
 
   @include vp-1279 {
     column-gap: 15px;
+    margin:  0 0 6rem;
   }
 }
 
@@ -63,6 +64,12 @@
     column-gap: 7.5rem;
     row-gap: 5.4rem;
   }
+
+  @include vp-1279 {
+    grid-template-columns: 50% 48%;
+    column-gap: 2%;
+    row-gap: 3.5rem;
+  }
   
 }
 
@@ -72,6 +79,10 @@
   color: $color-sandy-brown;
   text-transform: uppercase;
   margin: 0;
+
+  @include vp-1279 {
+    @include font-size(30px, 40px, $vp-834, $vp-1280);
+  }
 
   & span {
     font-weight: 400;
@@ -93,6 +104,12 @@
     @include vp-1439 {
       margin: 0 0 2.8rem;
       line-height: 3.3rem;
+    }
+
+    @include vp-1279 {
+      @include font-size(18px, 22px, $vp-834, $vp-1280);
+      margin: 0 0 1.5rem;
+      line-height: 2.55rem;
     }
   }
 
@@ -123,16 +140,19 @@
   & ::before {
     content: '';
     position: absolute;
-    // 92%
-    // @include size-width(488px, 730px, $vp-1280, $vp-1680); 
-    // 111.6%
-    // height: 98%;
     border: 1px solid $color-sandy-brown;
     top: 2%;
     bottom: 0;
     left: 30px;
     right: 35px;
     z-index: -10;
+  }
+
+  & img {
+    @include vp-1279 {
+      height: 344px;
+      object-fit: cover;
+    }
   }
 }
 
@@ -148,10 +168,21 @@
     column-gap: 2rem;
     margin: 0;
   }
+
+  @include vp-1279 {
+    margin:  0 2rem 0;
+    column-gap: 1rem;
+  }
 }
 
 .about__social_link {
   @include vp-1439 {
     align-items: flex-start;
+  }
+
+  & img {
+    @include vp-1279 {
+      @include size-width(30px, 45px, $vp-834, $vp-1280);
+    }
   }
 }
