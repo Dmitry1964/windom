@@ -1,5 +1,6 @@
 import { About } from "src/widgets/about";
 import { BannerMainPage } from "src/widgets/banner-main-page";
+import { Projects } from "src/widgets/projects";
 
 
 const MainPage = () => {
@@ -7,6 +8,7 @@ const MainPage = () => {
     <main>  
       <BannerMainPage />
       <About/>
+      <Projects />
     </main>
   );
 };
