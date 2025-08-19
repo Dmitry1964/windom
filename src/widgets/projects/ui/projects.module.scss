@@ -15,6 +15,10 @@
     top: 100%;
     left: 0;
     background-color: $color-sandy-brown;
+
+    @include vp-1439 {
+      width: 28%;
+    }
   }
 
   &::after {
@@ -38,6 +42,10 @@
   line-height: auto;
   position: relative;
 
+  @include vp-1439 {
+    margin: 0 0 6rem;
+  }
+
   & span {
     font-style: italic;
     color: $color-sandy-brown;
@@ -51,6 +59,10 @@
     top: 0;
     right: 0;
     background-color: $color-sandy-brown;
+
+    @include vp-1439 {
+      width: 41%;
+    }
   }
 
   &::after {
@@ -63,23 +75,24 @@
     background-color: $color-sandy-brown;
   }
 
-
-
-
 }
 
 .projects__inner {
-  padding: 0 128px;
+  @include size-container(39px, 128px, $vp-1280, $vp-1680);
   margin-bottom: 6rem;
 }
 
 .projects__desc {
-  font-size: 3rem;
+  @include font-size(23px, 30px, $vp-1280, $vp-1680);
   line-height: 3.5rem;
   margin: 0;
   width: 66%;
   align-self: flex-end;
   position: relative;
+
+  @include vp-1439 {
+    line-height: 2.5rem;
+  }
 
   & span {
     color: $color-sandy-brown;
@@ -95,7 +108,7 @@
 .projects__img_light,
 .projects__img_night {
   display: block;
-  height: 587px;
+  // height: 587px;
 }
 
 .projects__img_light {

@@ -196,7 +196,7 @@
   padding-bottom: clamp(#{$min-size}, #{$fluid-value}, #{$max-size});
 }
 
-@mixin fluid-size-container($min-size, $max-size, $min-viewport-width, $max-viewport-width) {
+@mixin size-container($min-size, $max-size, $min-viewport-width, $max-viewport-width) {
   $slope: math.div($max-size - $min-size, $max-viewport-width - $min-viewport-width);
   $y-intercept: $min-size - $slope * $min-viewport-width;
   $fluid-value: calc(#{$y-intercept} + #{$slope * 100}vw);
